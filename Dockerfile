@@ -6,6 +6,6 @@ RUN apt-get update && apt-get -y install build-essential redis-server
 
 WORKDIR /home/publish 
 
-ENTRYPOINT redis-server --daemonize yes && dotnet Abiomed.RLR.dll 
+CMD redis-server --daemonize yes && dotnet Abiomed.RLR.dll 
 
 EXPOSE 80 443 6379
