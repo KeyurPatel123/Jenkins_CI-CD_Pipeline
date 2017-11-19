@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		docker build -t keyurbitw/abiomed:v1 .
+		sh docker build -t keyurbitw/abiomed:v1 .
 		echo 'Docker Image Successfully created'
             }
         }
@@ -18,9 +18,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-		docker run -d -p 81:80 -p 443:443 -p 6379:6379 keyurbitw/abiomed:v1
+		sh docker run -d -p 81:80 -p 443:443 -p 6379:6379 keyurbitw/abiomed:v1
 		echo 'Container Successfully Created'
             }
         }
+    	stage('Push'){
+	    steps{
+	    	echo 'Pushing Image to Docker Hub..'
+		echo 'Imge Successfully pushed to Docker Hub.'
+	    }
+	}
     }
 }
