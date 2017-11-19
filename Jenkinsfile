@@ -5,7 +5,7 @@ pipeline {
 	stage('Clean Up'){
 	    steps{
 		echo 'Stopping & Removing Previous Conatiners'
-		sh 'docker stop $(docker ps -a -q)'
+		sh 'docker stop $(docker ps -q)'
 		sh 'docker rm -f $(docker ps -a -q)'
 		echo 'Conatiner Removed'
 				
