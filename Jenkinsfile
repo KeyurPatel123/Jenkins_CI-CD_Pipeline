@@ -4,7 +4,7 @@ pipeline {
     stages {
 	stage('Clean Up'){
 	    steps{
-		sh cleanup.sh
+		sh'./cleanup.sh'
 	    }
 	}
         stage('Build') {
