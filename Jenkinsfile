@@ -25,7 +25,7 @@ pipeline {
     	stage('Push'){
 	    steps{
 	    	echo 'Pushing Image to Docker Hub..'
-		sh 'docker login -u=keyurbitw -p=Mamta@123'
+		sh 'docker login -u=keyurbitw -p=Mamta@123 keyur.patel@einfochips.com'
 		sh 'docker push keyurbitw/abiomed:v1'
 		echo 'Imge Successfully pushed to Docker Hub.'
 	    }
