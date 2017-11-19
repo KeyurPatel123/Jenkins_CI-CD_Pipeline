@@ -1,4 +1,4 @@
-FROM keyurbitw/abiomed:v1
+FROM keyurbitw/abiomed
 
 COPY . /home 
 
