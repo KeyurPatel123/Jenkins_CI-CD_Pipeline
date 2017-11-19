@@ -10,7 +10,7 @@ pipeline {
 		echo 'Conatiner Removed'
 				
 		echo 'Removing Previous Images'
-		sh 'docker rmi -f $(docker ps -a -q)'
+		sh 'docker rmi -f $(docker images -q)'
 		echo 'Images Removed'
 	    }
 	}
