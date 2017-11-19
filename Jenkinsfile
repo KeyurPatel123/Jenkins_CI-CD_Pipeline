@@ -4,14 +4,7 @@ pipeline {
     stages {
 	stage('Clean Up'){
 	    steps{
-		echo 'Stopping & Removing Previous Conatiners'
-		sh 'docker stop $(docker ps -q)'
-		sh 'docker rm -f $(docker ps -a -q)'
-		echo 'Conatiner Removed'
-				
-		echo 'Removing Previous Images'
-		sh 'docker rmi -f $(docker images -q)'
-		echo 'Images Removed'
+		sh cleanup.sh
 	    }
 	}
         stage('Build') {
