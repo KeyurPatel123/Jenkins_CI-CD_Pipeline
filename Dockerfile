@@ -1,8 +1,10 @@
 FROM keyurbitw/abiomed
 
-COPY . /home 
+WORKDIR /home
 
-WORKDIR /home/publish 
+RUN git pull origin master 
+
+WORKDIR /home/Jenkins_CI-CD_Pipeline/publish 
 
 CMD redis-server --daemonize yes && dotnet Abiomed.RLR.dll 
 
