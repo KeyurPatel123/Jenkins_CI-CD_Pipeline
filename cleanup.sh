@@ -9,3 +9,5 @@ else
         docker rm -f $DOCK_Cont
         echo 'Container Removed'
 fi
+
+echo 'Cleaned Up'
